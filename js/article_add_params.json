@@ -1,0 +1,5 @@
+{
+    "max_length" : 500,
+    "title_length" : 40,
+    "max_image_size" : 3145128
+}

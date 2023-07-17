@@ -1,0 +1,112 @@
+#shop_container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.product{
+    display: inline-block;
+    align-content: center;
+    padding: 5px 3px 5px 3px;
+    font-size: 17px;
+    background-color: #4D384C;
+    border: 2px solid rgb(71, 71, 71);
+    border-radius: 10px;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+
+    transition: 0.05s 0.05s ease-in-out;
+}
+
+.product:hover{
+    transition: 0.2s 0.3s;
+    background-color: #2d212c;
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.product img{
+    width: 250px;
+    height: auto;
+}
+.product b{
+    color:blanchedalmond;
+}
+.product small{
+    color: aquamarine;
+}
+.product_add_cont{
+    /* flex-grow: 1; */
+    align-content: center;
+    min-height: 50px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    background-color: #4b4b4b;
+    width: 1100px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+.product_add_cont:hover{
+    box-shadow: #989898 -2px 2px 5px;
+}
+
+.form_add_product{
+    display: block;
+    -moz-box-orient: horizontal;
+    -webkit-box-orient: horizontal;
+    -moz-box-pack: justify;
+    -webkit-box-pack: justify;
+    font-size: 25px;
+}
+#form_add_product input{
+    color: rgb(218, 218, 218);
+    width: 100%;
+    font-size: 25px;
+    background-color: #3c3c3c;
+    border: none;
+    border-radius: 6px;
+
+    transition: all 100ms ease-in-out;
+}
+#form_add_product input:focus{
+    border: 2px solid rgb(79, 200, 79);
+    box-shadow: #989898 -2px 2px 10px;
+    outline: none;
+}
+#form_add_product textarea{
+    color: rgb(218, 218, 218);
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #3c3c3c;
+    /* border: 1px solid rgb(151, 151, 151); */
+    border: none;
+    border-radius: 6px;
+    min-height: 300px;
+    resize: none;
+
+    transition: all 100ms ease-in-out;
+}
+#form_add_product textarea:focus{
+    border: 2px solid rgb(79, 200, 79);
+    box-shadow: #989898 -2px 2px 10px;
+    outline: none;
+}
+
+/*Product page */
+#p_container{
+    display: flex;
+    padding: 20px;
+    background-color:#3c3c3c;
+    min-height: 700px;
+}
+#p_container #name_and_description{
+    margin-left: 40px;
+}
+#p_image{
+    width: 300px;
+    height:min-content;
+}

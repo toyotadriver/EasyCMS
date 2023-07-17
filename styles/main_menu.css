@@ -1,0 +1,43 @@
+#main_menu{
+    display: block;
+    margin-left: auto;
+    padding: 0px;
+    
+}
+#menu_line{
+    display: flex;
+    /* height: 100%; */
+    margin: 0px;
+}
+
+#menu_line li{
+    display: inline-block;
+    
+    width: auto;
+    height: auto;
+    line-height: 130%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    
+    transition: all 100ms ease-in-out;
+}
+#main_menu li:hover{
+    background-color: rgba(0, 0, 0, 0.163);
+    cursor: pointer;
+}
+.popup_form_login{
+    min-width: 200px;
+    padding: 7px;
+    box-sizing: border-box;
+    display: none;
+    position: absolute;
+    background-color: #4b4b4b;
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 10px;
+}
+.popup_form_login *{
+    display: flex;
+    flex-direction: column;
+}
