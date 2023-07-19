@@ -17,9 +17,9 @@ if (isset($_POST['product_name']) && isset($_POST['product_id']) && isset($_POST
         if (move_uploaded_file($_FILES['product_image']['tmp_name'], $uploadfile)) {
             $sdbc->insert('products', ['prod_id', 'product_name', 'cost', 'image'], [$pid, $pname, $pcost, $file]);
             $sdbc->insert('products_descriptions', ['id', 'description'], [$pid, $pdescr]);
-            $dc->notification(1, 'Товар успешно добавлен');
+            $dc->notification('Товар успешно добавлен', 1);
         } else {
-            $dc->notification(2, 'Что-то пошло не так');
+            $dc->notification('Что-то пошло не так', 2);
         }
     }
 }

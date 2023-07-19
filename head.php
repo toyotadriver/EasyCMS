@@ -12,6 +12,7 @@
 	<link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
 	<link href="//fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
+	<script src='jquery-3.7.0.min.js'></script>
 	<script src='js/login_form_script.js'></script>
 	
 </head>

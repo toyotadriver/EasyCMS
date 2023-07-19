@@ -33,9 +33,12 @@ while ($row = $result->fetch())
     $name = htmlspecialchars($row['product_name']);
     $cost = htmlspecialchars($row['cost']);
 
+    $editpencil = $dc->onauth("<span class='p_edit'>&#9998</span>");
     echo <<<_PRODUCT
         <div class='product' onclick="location.href='index.php?shop&product=$prod_id'">
+            
             <div class='prod_wrap'>
+                $editpencil
                 <img src='products_imgs/$img'><br>
                 <b>$name</b><br>
                 <small>$cost$</small>

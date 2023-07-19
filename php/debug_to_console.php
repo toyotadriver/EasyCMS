@@ -3,6 +3,9 @@ function debtoc($data)
 {
     switch (gettype($data))
         {
+            case 'NULL':
+                $out = 'NULL';
+                break;
             case 'integer':
                 $out = $data;
                 break;

@@ -32,7 +32,7 @@
 		</header>
 		<div class="popup_form_login" id="login_form">
 						<h1>ВЛОГИНИТЬСЯ</h1>
-						<form action="php/login.php" class="form-container" method='post'>
+						<form action="index.php?login" class="form-container" method='post'>
 							
 							<label for='login'><b>ЛОГИН</b></label>
 							<input type='text' name='login' required autofocus >

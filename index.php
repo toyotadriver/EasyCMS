@@ -26,6 +26,14 @@ if ($_GET) {
         case 'register':
             $current_container = 'php/register.php';
             break;
+        case 'login':
+            if (isset($_POST['login']) && isset($_POST['password'])){
+                $current_container = 'php/login.php';
+            }else{
+                $current_container = 'main_container.php';
+                $current_script = 'js/article_add_form.js';
+            }
+            break;
         case 'logout':
             $current_container = 'php/logout.php';
             break;

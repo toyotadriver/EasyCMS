@@ -32,9 +32,16 @@ if (isset($_POST['login']) && isset($_POST['password']))
             $_SESSION['username'] = $login;
             $_SESSION['id'] = $userid;
             $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
-            echo "<a href='../index.php'>Вернуться на главную<a/>";
+            $dc->notification('Авторизация прошла успешно', 1);
+            echo "<br><a href='../index.php'>Вернуться на главную<a/>";
+        }else{
+            $dc->notification("Неправильный пароль", 2);
+            echo "<br><a href='../index.php'>Вернуться на главную<a/>";
         }
         
+    }else{
+        $dc->notification('Такого пользователя не существует', 2);
+        echo "<br><a href='../index.php'>Вернуться на главную<a/>";
     }
 }
 ?>

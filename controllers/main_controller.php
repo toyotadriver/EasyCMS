@@ -1,25 +1,49 @@
 <?php
-$dc = new DefaultsController;
+if (isset($user)){
+    $dc = new DefaultsController($user);
+}else{
+    $dc = new DefaultsController;
+}
+
 
 class DefaultsController
 {
-    private $user_status;
+    private static $dcuser;
     private static $loggedin;
+    private static $authed;
     private $dbcontroller;
-    function __construct()
+    function __construct($u = NULL)
     {
-        $this::$loggedin = isset($_SESSION['id']) ? 'authed' : 'not_authed';
+        include_once 'php/debug_to_console.php';
+        $this::$dcuser = $u;
+        $this::$loggedin = isset($_SESSION['id']) && isset($this::$dcuser);
+        debtoc($this::$dcuser);
+        $this::$authed = $this::$loggedin? 'authed': 'not_authed';
         $this->dbcontroller = new DBController();
+    }
+    public function onauth($html, $default = '', $roleneeded = false){
+        if ($roleneeded){
+            $thatrole = $this->dcuser::$role == $roleneeded;
+        }else{
+            $thatrole = true;
+        }
+        if ($this::$loggedin && $thatrole){
+            return $html;
+        }else{
+            return $default;
+        }
     }
     private function loadsmth($var)
     {
-        $return = $this->dbcontroller->selectone('erm_zeroes', 'variable', $var, $this::$loggedin);
+        
+        $return = $this->dbcontroller->selectone('erm_zeroes', 'variable', $var, $this::$authed);
+        
         if (!$return) {
             $return = '!NULL!';
         }
         return $return;
     }
-    public function notification($type, $text)
+    public function notification($text, $type)
     {
         switch ($type)
         {

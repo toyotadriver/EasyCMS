@@ -110,3 +110,15 @@
     width: 300px;
     height:min-content;
 }
+.p_edit{
+    font-size: 30px;
+    position: absolute;
+    cursor:context-menu;
+    color:#2d212c;
+    transition: all 100ms ease-in-out;
+    border-radius: 6px;
+}
+.p_edit:hover{
+    transform: scale(1.5);
+    background-color: #cccccc8a;
+}
